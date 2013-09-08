@@ -1,0 +1,19 @@
+.ui-checkbox {
+	overflow: hidden;
+	border: 1px solid #AAA;
+	width: 20px;
+	height: 20px;
+
+	input {
+		position: relative;
+		top: -300px;
+	}
+}
+
+.ui-checkbox-unchecked {
+	background: #CCC;
+}
+
+.ui-checkbox-checked {
+	background: green;
+}

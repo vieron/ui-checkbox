@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ui-checkbox</title>
+  <style>
+
+    ul, li, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 150px;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+  </style>
+
+  <link rel="stylesheet" href="build/ui-checkbox.min.css">
+</head>
+<body>
+
+  <div class="ui-checkbox">
+    <input type="checkbox">
+  </div>
+
+  <br><br>
+
+  <button onclick="checkbox.check();">.check()</button>
+  <button onclick="checkbox.uncheck();">.uncheck()</button>
+  <button onclick="checkbox.toggle();">.toggle()</button>
+
+  <br><br>
+
+  <h4>Change event log:</h4>
+  <ul id="output"></ul>
+
+  <script src="build/ui-checkbox.min.js"></script>
+  <script>
+    var UICheckbox = require('ui-checkbox');
+    var checkbox;
+
+    window.onload = function() {
+        var el = document.querySelector('.ui-checkbox');
+        checkbox = new UICheckbox(el);
+
+        var output = document.getElementById('output');
+        checkbox.on('change', function(checked) {
+          var msg = '<li>is checked? <strong>' + checked + '</strong></li>';
+          output.innerHTML = msg + output.innerHTML;
+        });
+    }
+  </script>
+</body>
+</html>

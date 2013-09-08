@@ -1,0 +1,28 @@
+{
+  "name": "ui-checkbox",
+  "repo": "vieron/ui-checkbox",
+  "description": "Custom checkbox component",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/classes": "*",
+    "component/domify": "*",
+    "component/emitter": "*",
+    "component/events": "*",
+    "yields/prevent": "*",
+    "yields/stop": "*",
+    "component/matches-selector": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "index.scss"
+  ],
+  "templates": [
+    "templates/template.html"
+  ]
+}
