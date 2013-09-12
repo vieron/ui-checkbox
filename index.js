@@ -11,14 +11,8 @@ module.exports = UICheckbox;
 
 function UICheckbox(el) {
 	this.el = el || domify(template);
-	this.checkbox = this.el.querySelector('input');
 
-	this.classes = classes(this.el);
-
-	this.events = events(this.el, this);
-  	this.events.bind('click');
-
-  	this.init();
+  this.init();
 }
 
 
@@ -26,6 +20,15 @@ var fn = UICheckbox.prototype;
 Emitter(fn);
 
 fn.init = function() {
+	this.checkbox = this.el.querySelector('input');
+
+	if (!this.checkbox) { return this; }
+
+	this.classes = classes(this.el);
+	this.events = events(this.el, this);
+
+	this.events.bind('click');
+
 	if (this.checkbox.checked) {
 		this.check();
 	} else {
