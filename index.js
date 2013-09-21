@@ -95,3 +95,5 @@ fn.destroy = function() {
 fn.isChecked = function() {
 	return this.checkbox.checked;
 };
+
+fn.val = fn.isChecked;
