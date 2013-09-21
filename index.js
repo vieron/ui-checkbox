@@ -12,7 +12,7 @@ module.exports = UICheckbox;
 function UICheckbox(el) {
 	this.el = el || domify(template);
 
-  this.init();
+  	this.init();
 }
 
 
@@ -34,6 +34,8 @@ fn.init = function() {
 	} else {
 		this.uncheck();
 	}
+
+	return this;
 }
 
 fn.check = function() {
@@ -45,7 +47,7 @@ fn.check = function() {
 	this.emit('change', true);
 
 	return this;
-}
+};
 
 fn.uncheck = function() {
 	this.checkbox.checked = false;
@@ -55,7 +57,7 @@ fn.uncheck = function() {
 
 	this.emit('change', false);
 	return this;
-}
+};
 
 fn.toggle = function() {
 	if (this.checkbox.checked) {
@@ -65,7 +67,7 @@ fn.toggle = function() {
 	}
 
 	return this;
-}
+};
 
 fn.name = function(name) {
 	if (!name) {
@@ -74,11 +76,19 @@ fn.name = function(name) {
 
 	this.checkbox.name = name;
 	return this;
-}
+};
 
 fn.onclick = function(e) {
 	prevent(e);
 	stop(e);
 
 	this.toggle();
-}
+};
+
+fn.destroy = function() {
+
+};
+
+fn.isChecked = function() {
+	return this.checkbox.checked;
+};
