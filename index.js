@@ -1,18 +1,26 @@
-var classes = require('classes')
-  , domify = require('domify')
-  , Emitter = require('emitter')
-  , events = require('events')
-  , prevent = require('prevent')
-  , stop = require('stop')
-  , template = require('./templates/template.html');
+var classes = require('classes'),
+	domify = require('domify'),
+	Emitter = require('emitter'),
+	events = require('events'),
+	prevent = require('prevent'),
+	stop = require('stop'),
+	template = require('./templates/template.html');
 
 
 module.exports = UICheckbox;
 
+/**
+ * @class UICheckbox
+ * Input slider
+ *
+ * @constructor
+ * Creates a new Checkbox instance.
+ * @param {HTMLElement} [el] The input HTML element.
+ */
 function UICheckbox(el) {
 	this.el = el || domify(template);
 
-  	this.init();
+	this.init();
 }
 
 

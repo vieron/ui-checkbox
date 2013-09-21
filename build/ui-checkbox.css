@@ -1,0 +1,19 @@
+/*! ui-checkbox - v0.0.1 - 2013-09-22
+* http://github.com/vieron/ui-checkbox.git
+* Copyright (c) 2013 vieron; Licensed MIT */
+
+
+.ui-checkbox {
+  overflow: hidden;
+  border: 1px solid #AAA;
+  width: 20px;
+  height: 20px; }
+  .ui-checkbox input {
+    position: relative;
+    top: -300px; }
+
+.ui-checkbox-unchecked {
+  background: #CCC; }
+
+.ui-checkbox-checked {
+  background: green; }
