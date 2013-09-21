@@ -25,9 +25,7 @@ fn.init = function() {
 	if (!this.checkbox) { return this; }
 
 	this.classes = classes(this.el);
-	this.events = events(this.el, this);
-
-	this.events.bind('click');
+	this.events();
 
 	if (this.checkbox.checked) {
 		this.check();
@@ -36,7 +34,12 @@ fn.init = function() {
 	}
 
 	return this;
-}
+};
+
+fn.events = function() {
+	this.events = events(this.el, this);
+	this.events.bind('click', 'onCheck');
+};
 
 fn.check = function() {
 	this.checkbox.checked = true;
@@ -71,14 +74,14 @@ fn.toggle = function() {
 
 fn.name = function(name) {
 	if (!name) {
-		return value(this.checkbox);
+		return this.checkbox.name;
 	}
 
 	this.checkbox.name = name;
 	return this;
 };
 
-fn.onclick = function(e) {
+fn.onCheck = function(e) {
 	prevent(e);
 	stop(e);
 
@@ -86,7 +89,7 @@ fn.onclick = function(e) {
 };
 
 fn.destroy = function() {
-
+	this.events.unbind('click', 'onCheck');
 };
 
 fn.isChecked = function() {
