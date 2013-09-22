@@ -1021,7 +1021,7 @@ module.exports = UICheckbox;
 
 /**
  * @class UICheckbox
- * Input slider
+ * Input Checkbox
  *
  * @constructor
  * Creates a new Checkbox instance.
@@ -1055,8 +1055,8 @@ fn.init = function() {
 };
 
 fn.events = function() {
-	this.events = events(this.el, this);
-	this.events.bind('click', 'onCheck');
+	this.elEvents = events(this.el, this);
+	this.elEvents.bind('click', 'onCheck');
 };
 
 fn.check = function() {
@@ -1106,9 +1106,13 @@ fn.onCheck = function(e) {
 	this.toggle();
 };
 
-fn.destroy = function() {
-	this.events.unbind('click', 'onCheck');
+fn.unbind = function() {
+	if (this.elEvents) {
+		this.elEvents.unbind('click', 'onCheck');
+	}
 };
+
+fn.destroy = fn.unbind;
 
 fn.isChecked = function() {
 	return this.checkbox.checked;
