@@ -1107,9 +1107,7 @@ fn.onCheck = function(e) {
 };
 
 fn.unbind = function() {
-	if (this.elEvents) {
-		this.elEvents.unbind('click', 'onCheck');
-	}
+	this.elEvents.unbind('click', 'onCheck');
 };
 
 fn.destroy = fn.unbind;
