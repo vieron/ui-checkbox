@@ -29,7 +29,7 @@ Same proccess as in Build but you can use grunt watch to trigger component build
 
 ## API
 
-    [http://vieron.github.io/ui-checkbox/](http://vieron.github.io/ui-checkbox/)
+[http://vieron.github.io/ui-checkbox/](http://vieron.github.io/ui-checkbox/)
 
 ## License
 
