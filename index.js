@@ -45,8 +45,8 @@ fn.init = function() {
 };
 
 fn.events = function() {
-	this.events = events(this.el, this);
-	this.events.bind('click', 'onCheck');
+	this.elEvents = events(this.el, this);
+	this.elEvents.bind('click', 'onCheck');
 };
 
 fn.check = function() {
@@ -97,8 +97,8 @@ fn.onCheck = function(e) {
 };
 
 fn.unbind = function() {
-	if (this.events) {
-		this.events.unbind('click', 'onCheck');
+	if (this.elEvents) {
+		this.elEvents.unbind('click', 'onCheck');
 	}
 };
 
